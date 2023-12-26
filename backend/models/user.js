@@ -1,10 +1,10 @@
-import mongoose, { mongo } from "mongoose";
-const Schema = mongoose.Schema;
+import mongoose from "mongoose";
 
+const Schema = mongoose.Schema();
 
-const userSchema = new Schema({
-    name :
-    {
+ const UserSchema = new Schema ({
+   User:{
+    username :{
         type:String,
         required:true
     },
@@ -13,12 +13,12 @@ const userSchema = new Schema({
         required:true,
         unique:true
     },
-    password :
-    {
+    password:{
         type:String,
         required:true,
         minLength:6
     }
-})
+}
 
-export default mongoose.model("User",userSchema);
+});
+export default mongoose.Schema(User,UserSchema)
